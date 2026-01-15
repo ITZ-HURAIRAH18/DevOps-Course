@@ -1,0 +1,16 @@
+Git Restore Command 
+git restore
+Used when we make our changes on track place not commit 
+------------------------------------
+Git Revert Command
+git revert id After we used :q
+used commit id we can move to that side of code to check commit id use git log & git log --oneline
+Important: This command make id for this change and where we move (commit ) id should be track
+-----------------------------------
+Git Reset Command
+git reset 
+it is used to remove the history of moveable commit 
+--------------------------------
+ 
+
+
