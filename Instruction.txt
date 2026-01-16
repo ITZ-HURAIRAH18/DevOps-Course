@@ -39,7 +39,8 @@ git switch -c third
 
 Delete Branch
 
-git delete -d (Branch Name)
+git delete -d (Branch Name) For Local 
+git push origin --delete second ( For Global on GIthub)
 
 For Merage Data of Branch 2 in 1 
 git merge second
