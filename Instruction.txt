@@ -93,7 +93,7 @@ Skip Git Staging Area
 it is used to commit the code with used add command 
 
 git commit -a -m "Comment '
-git commit file name -m "Comment"
+git commit file name -m "Comment" 
 
 
 
