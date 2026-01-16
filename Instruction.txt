@@ -74,7 +74,11 @@ git merge origin/main
 Deploy Static Website on Github (HITML,CSS,JS)
 ---------------------------------
 Deploy React App on Githib (Take Instruction from GPT)
- 
+--------------------------------
+
+Git Diff Command 
+
+It is used  see differnece bwtween our local and github 
 
 
 
