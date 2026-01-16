@@ -62,6 +62,13 @@ git clone URL . (Used When you donot need initial folder)
 
 git clone branch (name ) URL
 
+----------------------------
+git pull or Fetch Command
+
+git pull (For Instant Merage)
+git fetch origin (it make a request that can fetch but cannot merage )
+git status
+git merge origin/main
  
 
 
