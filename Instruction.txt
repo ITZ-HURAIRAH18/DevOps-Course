@@ -45,14 +45,22 @@ git push origin --delete second ( For Global on GIthub)
 For Merage Data of Branch 2 in 1 
 git merge second
 
---------------------
+--------------------------------------------
 git amend command
 
 git commit --amend -m "Update Command" 
 
 also used git commit -amend 
 after used :wq and enter
--------------------
+------------------------------------------
+Git Clone Command 
+
+git clone URL
+
+git clone URL . (Used When you donot need initial folder)
+
+
+git clone branch (name ) URL
 
  
 
