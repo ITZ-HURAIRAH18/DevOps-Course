@@ -48,8 +48,9 @@ git merge second
 --------------------
 git amend command
 
-git commit amend -m "Update the Comment "
+git commit --amend -m "Update Command"
 
+ 
 
 
 
