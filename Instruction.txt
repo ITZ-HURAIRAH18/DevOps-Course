@@ -50,6 +50,10 @@ git amend command
 
 git commit --amend -m "Update Command" 
 
+also used git commit -amend 
+after used :wq and enter
+----------------
+
  
 
 
