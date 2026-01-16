@@ -93,7 +93,9 @@ Skip Git Staging Area
 it is used to commit the code with used add command 
 
 git commit -a -m "Comment '
-git commit file name -m "Comment" 
+E:\Courses\DevOps>git commit Instruction.txt -m "used file name "
+
+-------------------------------
 
 
 
