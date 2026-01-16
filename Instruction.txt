@@ -45,6 +45,10 @@ git push origin --delete second ( For Global on GIthub)
 For Merage Data of Branch 2 in 1 
 git merge second
 
+--------------------
+git amend command
+
+git commit amend -m "Update the Comment "
 
 
 
