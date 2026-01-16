@@ -20,6 +20,30 @@ Save:CTRL + X
 Add Alias via Command (BEST)
 git config --global alias.st status
 git config --local alias.st status
+--------------------------------------------
+Create, Switch, Merge & Delete Branches Explained
+E:\Courses\DevOps>git branch
+* main
+Check Branch
+E:\Courses\DevOps>git branch second
+Create New Branch
+git branch (Brand Name)
+git checkout Branch name ( OLD MEthod Still used )
+git switch Branch name 
+--------------------------------------
+Create and Switch to Branch 
+
+git checkout -b third
+# or
+git switch -c third
+
+Delete Branch
+
+git delete -d (Branch Name)
+
+
+
+
 
 
 
