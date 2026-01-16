@@ -69,6 +69,11 @@ git pull (For Instant Merage)
 git fetch origin (it make a request that can fetch but cannot merage )
 git status
 git merge origin/main
+
+----------------------
+Deploy Static Website on Github (HITML,CSS,JS)
+---------------------------------
+Deploy React App on Githib (Take Instruction from GPT)
  
 
 
