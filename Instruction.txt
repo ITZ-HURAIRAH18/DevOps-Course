@@ -108,7 +108,9 @@ E:\Courses\DevOps>git stash list
 stash@{0}: WIP on main: cc2883e Last Commit ( used to see stash List)
 
 
-E:\Courses\DevOps>git stash apply (used to undo stash wit history)
+E:\Courses\DevOps>git stash apply (used to undo stash with history)
+
+E:\Courses\DevOps>git stash pop (used to undo stash without history)
 
 
 
