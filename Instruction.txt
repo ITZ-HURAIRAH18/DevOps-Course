@@ -129,6 +129,9 @@ Set username and email
 
 Also Remove From Crediential Management 
 
+-------------------------
+When you want to contribute other Project then first make a fork then send pull Reuest to him
+
 
 
 
