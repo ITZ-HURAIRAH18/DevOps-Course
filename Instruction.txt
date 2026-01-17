@@ -47,7 +47,7 @@ git merge second
 
 --------------------------------------------
 git amend command
-
+it is used to make change in the same comment we used (if we want 1 word change in code so we cannot make new comment )
 git commit --amend -m "Update Command" 
 
 also used git commit -amend 
@@ -96,6 +96,26 @@ git commit -a -m "Comment '
 E:\Courses\DevOps>git commit Instruction.txt -m "used file name "
 
 -------------------------------
+Git Stash Command
+it is used when we donot want to push or commit our code but store in temporary place
+
+
+E:\Courses\DevOps>git stash
+Saved working directory and index state WIP on main: cc2883e Last Commit ( used to stash changes in Temporary place)
+
+
+E:\Courses\DevOps>git stash list
+stash@{0}: WIP on main: cc2883e Last Commit ( used to see stash List)
+
+
+E:\Courses\DevOps>git stash apply (used to undo stash wit history)
+
+
+
+
+
+
+
 
 
 
