@@ -114,6 +114,22 @@ E:\Courses\DevOps>git stash apply (used to undo stash with history)
 E:\Courses\DevOps>git stash pop (used to undo stash without history)
 
 
+git stash clear (Used to clear all stash)
+
+---------------------------------
+Set new user in Git 	
+
+E:\Courses\DevOps>git config list (Show Current user)
+ git config --global --unset user.name (Used to Remove username )
+ git config --global --unset user.email (Used to Remove email )
+
+Set username and email
+ git config --global  user.email "email" (Used to Add email )
+ git config --global  user.username "Username" (Used to Add Username )
+
+Also Remove From Crediential Management 
+
+
 
 
 
