@@ -82,7 +82,7 @@ It is used  see differnece bwtween our local and github
 
 E:\Courses\DevOps>git diff (When not added) ( git add .)
 E:\Courses\DevOps>git diff --staged (git add .)
-E:\Courses\DevOps>git diff origin/main (when we commit bu cannot push)
+E:\Courses\DevOps>git diff origin/main (when we commit but cannot push)
 E:\Courses\DevOps>git diff 9b18ba2 adb06cb ( Check Diff between 2 commit log id)
 E:\Courses\DevOps>git diff --name-only (it give the file name )
 E:\Courses\DevOps>git diff  --color-words ( it is used to see chages in colours )
@@ -93,6 +93,7 @@ Skip Git Staging Area
 it is used to commit the code with used add command 
 
 git commit -a -m "Comment '
+git commit -am "Comment"
 E:\Courses\DevOps>git commit Instruction.txt -m "used file name "
 
 -------------------------------
