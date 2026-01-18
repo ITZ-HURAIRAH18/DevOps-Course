@@ -1,12 +1,11 @@
-name: Print Asslamualikum
+name: Daily Asslamualikum Message
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '37 8 * * *'   # 08:37 UTC = 01:37 PM PKT
 
 jobs:
-  say-hello:
+  print-message:
     runs-on: ubuntu-latest
 
     steps:
