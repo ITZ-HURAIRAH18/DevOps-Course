@@ -1,0 +1,13 @@
+name: Daily Asslamualikum Message
+
+on:
+  schedule:
+    - cron: '41 8 * * *'   # 08:37 UTC = 01:37 PM PKT
+
+jobs:
+  print-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: echo "Asslamualikum From Hurairah"
