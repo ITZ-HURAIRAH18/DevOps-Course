@@ -1,0 +1,14 @@
+name: Print Asslamualikum
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: echo "Asslamualikum From Hurairah"
