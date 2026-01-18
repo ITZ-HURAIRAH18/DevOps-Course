@@ -216,6 +216,13 @@ jobs:
           publish_dir: "Deploy React app on Github pages/dist"
 
 
+------------------------------------------------------
+Artifacts & Caching for Next.js Build | GitHub Actions
+Cache: We make a data that cannot be change in cache so that it can make out build fast
+Artifact: It is used to Store buils so we see our build 
+-----------------------------------------------------------
+
+
 
 
 
