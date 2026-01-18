@@ -176,6 +176,46 @@ Cron Format Explained
 │ │ │ │ │
 37 8 * * *
 
+--------------------------------
+How to make Build of react app when we push code 
+name: Deploy Vite React App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: "Deploy React app on Github pages"
+
+      - name: Build project
+        run: npm run build
+        working-directory: "Deploy React app on Github pages"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: "Deploy React app on Github pages/dist"
+
+
 
 
 
