@@ -131,6 +131,28 @@ Also Remove From Crediential Management
 
 -------------------------
 When you want to contribute other Project then first make a fork then send pull Reuest to him
+-----------------------------------------------------------------------------------
+Create Your First GitHub Actions Workflow
+
+Go to Repo and in Action Create Action Write your action in this file main.yml
+
+name: Print Asslamualikum
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: echo "Asslamualikum From Hurairah"
+
+-----------------------
+
 
 
 
