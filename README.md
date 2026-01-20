@@ -1,4 +1,4 @@
-"# Git & GitHub Comprehensive Guide
+"Git & GitHub Comprehensive Guide
 
 ## Table of Contents
 1. [Git Restore Command](#git-restore-command)
