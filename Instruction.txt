@@ -221,6 +221,41 @@ Artifacts & Caching for Next.js Build | GitHub Actions
 Cache: We make a data that cannot be change in cache so that it can make out build fast
 Artifact: It is used to Store buils so we see our build 
 -----------------------------------------------------------
+Job Concurrency (IT Means make Build of Latest Commit cancell Other Build if it is in Process)
+name: React Build CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: react-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build React app
+        run: npm run build
+----------------------------------------------------
 
 
 
