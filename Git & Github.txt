@@ -1,0 +1,286 @@
+Git Restore Command 
+git restore
+Used when we make our changes on track place not commit 
+------------------------------------
+Git Revert Command
+git revert id After we used :q
+used commit id we can move to that side of code to check commit id use git log & git log --oneline
+Important: This command make id for this change and where we move (commit ) id should be track
+-----------------------------------
+Git Reset Command
+git reset 
+it is used to remove the history of moveable commit 
+--------------------------------
+Git Alias Configuration (Local & Global)
+git config --local --edit
+git config --global --edit
+
+Add Alias Manually (inside nano)
+Save:CTRL + X
+Add Alias via Command (BEST)
+git config --global alias.st status
+git config --local alias.st status
+--------------------------------------------
+Create, Switch, Merge & Delete Branches Explained
+E:\Courses\DevOps>git branch
+* main
+Check Branch
+E:\Courses\DevOps>git branch second
+Create New Branch
+git branch (Brand Name)
+git checkout Branch name ( OLD MEthod Still used )
+git switch Branch name 
+--------------------------------------
+Create and Switch to Branch 
+
+git checkout -b third
+# or
+git switch -c third
+
+Delete Branch
+
+git delete -d (Branch Name) For Local 
+git push origin --delete second ( For Global on GIthub)
+
+For Merage Data of Branch 2 in 1 
+git merge second
+
+--------------------------------------------
+git amend command
+it is used to make change in the same comment we used (if we want 1 word change in code so we cannot make new comment )
+git commit --amend -m "Update Command" 
+
+also used git commit -amend 
+after used :wq and enter
+------------------------------------------
+Git Clone Command 
+
+git clone URL
+
+git clone URL . (Used When you donot need initial folder)
+
+
+git clone branch (name ) URL
+
+----------------------------
+git pull or Fetch Command
+
+git pull (For Instant Merage)
+git fetch origin (it make a request that can fetch but cannot merage )
+git status
+git merge origin/main
+
+----------------------
+Deploy Static Website on Github (HITML,CSS,JS)
+---------------------------------
+Deploy React App on Githib (Take Instruction from GPT)
+--------------------------------
+
+Git Diff Command 
+
+It is used  see differnece bwtween our local and github 
+
+E:\Courses\DevOps>git diff (When not added) ( git add .)
+E:\Courses\DevOps>git diff --staged (git add .)
+E:\Courses\DevOps>git diff origin/main (when we commit but cannot push)
+E:\Courses\DevOps>git diff 9b18ba2 adb06cb ( Check Diff between 2 commit log id)
+E:\Courses\DevOps>git diff --name-only (it give the file name )
+E:\Courses\DevOps>git diff  --color-words ( it is used to see chages in colours )
+
+-----------------------------
+Skip Git Staging Area
+
+it is used to commit the code with used add command 
+
+git commit -a -m "Comment '
+git commit -am "Comment"
+E:\Courses\DevOps>git commit Instruction.txt -m "used file name "
+
+-------------------------------
+Git Stash Command
+it is used when we donot want to push or commit our code but store in temporary place
+
+
+E:\Courses\DevOps>git stash
+Saved working directory and index state WIP on main: cc2883e Last Commit ( used to stash changes in Temporary place)
+
+
+E:\Courses\DevOps>git stash list
+stash@{0}: WIP on main: cc2883e Last Commit ( used to see stash List)
+
+
+E:\Courses\DevOps>git stash apply (used to undo stash with history)
+
+E:\Courses\DevOps>git stash pop (used to undo stash without history)
+
+
+git stash clear (Used to clear all stash)
+
+---------------------------------
+Set new user in Git 	
+
+E:\Courses\DevOps>git config list (Show Current user)
+ git config --global --unset user.name (Used to Remove username )
+ git config --global --unset user.email (Used to Remove email )
+
+Set username and email
+ git config --global  user.email "email" (Used to Add email )
+ git config --global  user.username "Username" (Used to Add Username )
+
+Also Remove From Crediential Management 
+
+-------------------------
+When you want to contribute other Project then first make a fork then send pull Reuest to him
+-----------------------------------------------------------------------------------
+Create Your First GitHub Actions Workflow
+
+Go to Repo and in Action Create Action Write your action in this file main.yml
+
+name: Print Asslamualikum
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: echo "Asslamualikum From Hurairah"
+
+-----------------------------------------------------
+ How to Schedule GitHub Actions Workflows
+name: Daily Asslamualikum Message
+
+on:
+  schedule:
+    - cron: '37 8 * * *'   # 08:37 UTC = 01:37 PM PKT
+
+jobs:
+  print-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: echo "Asslamualikum From Hurairah"
+
+Cron Format Explained
+┌──────── minute (37)
+│ ┌────── hour (8 UTC)
+│ │ ┌──── day of month (*)
+│ │ │ ┌── month (*)
+│ │ │ │ ┌─ day of week (*)
+│ │ │ │ │
+37 8 * * *
+
+--------------------------------
+How to make Build of react app when we push code 
+name: Deploy Vite React App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: "Deploy React app on Github pages"
+
+      - name: Build project
+        run: npm run build
+        working-directory: "Deploy React app on Github pages"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: "Deploy React app on Github pages/dist"
+
+
+------------------------------------------------------
+Artifacts & Caching for Next.js Build | GitHub Actions
+Cache: We make a data that cannot be change in cache so that it can make out build fast
+Artifact: It is used to Store buils so we see our build 
+-----------------------------------------------------------
+Job Concurrency (IT Means make Build of Latest Commit cancell Other Build if it is in Process)
+name: React Build CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: react-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build React app
+        run: npm run build
+----------------------------------------------------
+SSH key GitHub ke sath secure authentication ke liye use hoti hai,
+ jo password ke baghair repository access allow karti hai.
+
+(JAb hm Different GIthub Account use krta ho to isa use krta ha )
+
+ssh-keygen -t ed25519 -C "your_email@example.com"
+ ABove Command is used to generate SSH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

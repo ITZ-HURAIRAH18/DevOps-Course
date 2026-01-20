@@ -1,0 +1,111 @@
+How to Add SSH key in Gitlab 
+
+Here’s a **simple, step-by-step guide** to **create and add an SSH key for GitLab** 🔐
+(works on **Windows, Linux, macOS**)
+
+---
+
+## 1️⃣ Check if SSH already exists
+
+Open **Terminal / Git Bash** and run:
+
+```bash
+ls ~/.ssh
+```
+
+If you see files like `id_ed25519` or `id_rsa`, SSH already exists.
+If not, create a new one.
+
+---
+
+## 2️⃣ Generate a New SSH Key (Recommended)
+
+Run:
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+👉 If your system doesn’t support `ed25519`, use:
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+### When prompted:
+
+* **File location** → press **Enter** (default is fine)
+* **Passphrase** → optional (press Enter to skip)
+
+---
+
+## 3️⃣ Start SSH Agent
+
+```bash
+eval "$(ssh-agent -s)"
+```
+
+Add your key:
+
+```bash
+ssh-add ~/.ssh/id_ed25519
+```
+
+(or `id_rsa` if you used RSA)
+
+---
+
+## 4️⃣ Copy SSH Public Key
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+👉 Copy the **entire output**
+(it starts with `ssh-ed25519` or `ssh-rsa`)
+
+---
+
+## 5️⃣ Add SSH Key to GitLab
+
+1. Open **GitLab**
+2. Go to **Profile → Preferences**
+3. Click **SSH Keys**
+4. Paste the key into **Key** field
+5. Give a **Title**
+6. Click **Add key**
+
+---
+
+## 6️⃣ Test SSH Connection
+
+```bash
+ssh -T git@gitlab.com
+```
+
+✅ If successful, you’ll see:
+
+```text
+Welcome to GitLab, @your_username!
+```
+
+---
+
+## 7️⃣ Use SSH URL for Repos
+
+When cloning:
+
+```bash
+git clone git@gitlab.com:username/repo-name.git
+```
+
+(Not HTTPS ❌)
+
+---
+
+## One-Line Summary
+
+🔑 **SSH key allows secure, password-free connection between your system and GitLab.**
+
+--------------------------------------------------
+
