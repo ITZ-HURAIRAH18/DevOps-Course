@@ -256,6 +256,14 @@ jobs:
       - name: Build React app
         run: npm run build
 ----------------------------------------------------
+SSH key GitHub ke sath secure authentication ke liye use hoti hai,
+ jo password ke baghair repository access allow karti hai.
+
+(JAb hm Different GIthub Account use krta ho to isa use krta ha )
+
+ssh-keygen -t ed25519 -C "your_email@example.com"
+ ABove Command is used to generate SSH
+
 
 
 
