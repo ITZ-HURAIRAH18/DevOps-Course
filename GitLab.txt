@@ -108,4 +108,24 @@ git clone git@gitlab.com:username/repo-name.git
 🔑 **SSH key allows secure, password-free connection between your system and GitLab.**
 
 --------------------------------------------------
+Create & Merge Branches in GitLab
+
+
+E:\Courses\DevOps\GitLab Repo>git branch css
+
+E:\Courses\DevOps\GitLab Repo>git branch
+  css
+* main
+
+E:\Courses\DevOps\GitLab Repo>git switch css
+Switched to branch 'css'
+
+E:\Courses\DevOps\GitLab Repo>git branch 
+* css
+  main
+
+E:\Courses\DevOps\GitLab Repo>
+
+
+
 
