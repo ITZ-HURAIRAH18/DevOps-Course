@@ -126,6 +126,16 @@ E:\Courses\DevOps\GitLab Repo>git branch
 
 E:\Courses\DevOps\GitLab Repo>
 
+E:\Courses\DevOps\GitLab Repo>git merage css
 
+--------------------------------
+ Shared Vs Group Vs Specific Runners | 2025
+
+ Shared: Avaliable for all Project
+
+ Group: Avaliable for All Project in a Group 
+
+ Specific: Dedicate to Single Project 
+ Best for private 
 
 
