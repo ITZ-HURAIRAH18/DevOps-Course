@@ -1,0 +1,9 @@
+Images vs Containers in Docker
+
+Image: It is the Blue Print of our Project which show all thing that what dependencies are we used in it 
+Important: It is Immutable 
+For Easier it is look like a class (OOP)
+
+Containers:It is used to run the Image
+Important:It is Isolated Means if we have a project that need Node so Docker run this without Node.js
+For Easier it is look like a Object (OOP)
