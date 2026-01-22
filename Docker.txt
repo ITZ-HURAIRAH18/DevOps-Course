@@ -43,3 +43,6 @@ CMD ["node", "index.js"]
 
 Create image: docker build -t name .
 
+-----------------------------------------------------
+Run Docker Image Inside a Container
+
