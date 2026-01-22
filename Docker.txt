@@ -13,5 +13,33 @@ Docker Hub vs Docker Desktop
 Docker Hub: It i Cloud Platform where we store and pull Images 
 Docker Desktop: It is th platform where we can run Docker in out PC
 
-Base (Parent) Image:It is the image like we donot want to write the code of nodejs so we used this import from Node like this way
+Base (Parent) Image:It is the image like we donot want to write the code of nodejs so we used this import 
+from Node like this way
+
+---------------------------------------------------------
+ Create a Docker Image for a Node.js App Using Dockerfile
+
+# Use official Node.js runtime as base image
+FROM node:20-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy application files
+COPY . .
+
+# Expose port
+EXPOSE 3000
+
+# Start the application
+CMD ["node", "index.js"]
+
+
+Create image: docker build -t name .
 
