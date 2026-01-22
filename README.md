@@ -1,4 +1,18 @@
-"Git & GitHub Comprehensive Guide
+# ⚡ DevOps Learning Hub
+
+<div align="center">
+
+### 📚 Choose Your Topic
+
+[![Git & GitHub](https://img.shields.io/badge/1-Git_&_GitHub-blue?style=for-the-badge&logo=git)](#git--github)
+[![GitLab](https://img.shields.io/badge/2-GitLab-orange?style=for-the-badge&logo=gitlab)](#gitlab)
+[![Docker](https://img.shields.io/badge/3-Docker-blue?style=for-the-badge&logo=docker)](#docker)
+
+</div>
+
+---
+
+## Git & GitHub
 
 ## Table of Contents
 1. [Git Restore Command](#git-restore-command)
@@ -642,6 +656,151 @@ This comprehensive guide covers all essential Git and GitHub operations includin
 - ✅ GitHub Actions for CI/CD automation
 - ✅ Deployment strategies
 - ✅ SSH authentication for security
+
+---
+
+## GitLab
+
+### 🔐 How to Add SSH Key in GitLab
+
+Here's a **simple, step-by-step guide** to **create and add an SSH key for GitLab**
+(works on **Windows, Linux, macOS**)
+
+---
+
+#### 1️⃣ Check if SSH already exists
+
+Open **Terminal / Git Bash** and run:
+
+```bash
+ls ~/.ssh
+```
+
+If you see files like `id_ed25519` or `id_rsa`, SSH already exists.
+If not, create a new one.
+
+---
+
+#### 2️⃣ Generate a New SSH Key (Recommended)
+
+Run:
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+👉 If your system doesn't support `ed25519`, use:
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+**When prompted:**
+* **File location** → press **Enter** (default is fine)
+* **Passphrase** → optional (press Enter to skip)
+
+---
+
+#### 3️⃣ Start SSH Agent
+
+```bash
+eval "$(ssh-agent -s)"
+```
+
+Add your key:
+
+```bash
+ssh-add ~/.ssh/id_ed25519
+```
+
+(or `id_rsa` if you used RSA)
+
+---
+
+#### 4️⃣ Copy SSH Public Key
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+👉 Copy the **entire output**
+(it starts with `ssh-ed25519` or `ssh-rsa`)
+
+---
+
+#### 5️⃣ Add SSH Key to GitLab
+
+1. Open **GitLab**
+2. Go to **Profile → Preferences**
+3. Click **SSH Keys**
+4. Paste the key into **Key** field
+5. Give a **Title**
+6. Click **Add key**
+
+---
+
+#### 6️⃣ Test SSH Connection
+
+```bash
+ssh -T git@gitlab.com
+```
+
+✅ If successful, you'll see:
+
+```text
+Welcome to GitLab, @your_username!
+```
+
+---
+
+#### 7️⃣ Use SSH URL for Repos
+
+When cloning:
+
+```bash
+git clone git@gitlab.com:username/repo-name.git
+```
+
+---
+
+## Docker
+
+### 🐳 Docker Fundamentals
+
+#### Images vs Containers in Docker
+
+**Image:**
+- It is the Blue Print of our Project which shows all dependencies we used in it
+- **Important:** It is **Immutable**
+- For easier understanding: it is like a **class** (OOP)
+
+**Containers:**
+- It is used to run the Image
+- **Important:** It is **Isolated** - if we have a project that needs Node, Docker runs this without requiring Node.js installed on the system
+- For easier understanding: it is like an **Object** (OOP)
+
+---
+
+#### Docker Hub vs Docker Desktop
+
+**Docker Hub:**
+- It is a Cloud Platform where we store and pull Images
+
+**Docker Desktop:**
+- It is the platform where we can run Docker on our PC
+
+---
+
+#### Base (Parent) Image
+
+- It is the image we import (like Node.js) so we don't have to write all the setup code from scratch
+- We use it as a foundation for our custom images
+
+---
+
+### 🔙 Navigation
+
+[⬆️ Back to Top](#-devops-learning-hub)
 
 **Best Practices:**
 - Commit frequently with meaningful messages
