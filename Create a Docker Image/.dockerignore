@@ -1,0 +1,4 @@
+node_modules
+
+if we want to ignore multiple files of same extenstion so we used 
+*.txt
