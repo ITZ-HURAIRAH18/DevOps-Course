@@ -45,4 +45,14 @@ Create image: docker build -t name .
 
 -----------------------------------------------------
 Run Docker Image Inside a Container
+-----------------------------
+Create & Manage Multiple Docker Images
+
+docker system prune -a (This command is used to delete all images in docker)
+
+docker build -t (name) . (Used to create image)
+
+docker images (used to check all images)
+
+docker build -t (name:v2) . (Used to create image after changes in Project)
 
