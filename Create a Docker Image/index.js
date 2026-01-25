@@ -6,7 +6,7 @@ app.use(express.json());
 
 // Route
 app.get('/', (req, res) => {
-  res.send('Express server is running 🚀HI');
+  res.send('Express server istvn tvj running ce ');
 });
 
 // Server

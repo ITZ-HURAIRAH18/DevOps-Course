@@ -56,3 +56,15 @@ docker images (used to check all images)
 
 docker build -t (name:v2) . (Used to create image after changes in Project)
 
+
+---------------------------------------------
+ Volumes Explained! | Why Use Volumes in Docker Containers?
+
+ We used this with Container. Because when we change it local it automatically appear on docker container
+
+ Add node nodemon and in terminal run this command 
+
+ docker run  --name my-container -p 3000:3000 --rm -v "E:/Courses/DevOps/Create a Docker Image/app" app
+
+ ---------------------------------------------
+
