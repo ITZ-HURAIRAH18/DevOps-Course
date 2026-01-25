@@ -67,4 +67,37 @@ docker build -t (name:v2) . (Used to create image after changes in Project)
  docker run  --name my-container -p 3000:3000 --rm -v "E:/Courses/DevOps/Create a Docker Image/app" app
 
  ---------------------------------------------
+ Compose.yaml File Explained
+
+This is the file where we make image of all we need like DB and project and run with single file
+
+version: "3.9"
+
+services:
+  app:
+    image: node:18
+    container_name: node_app
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    ports:
+      - "3000:3000"
+    command: npm start
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:6
+    container_name: mongo_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
+ 
+Run this file with:docker compose up
+Stop Container with: docker compose down
+
 
