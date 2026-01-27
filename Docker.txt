@@ -123,6 +123,50 @@ password:acpMuxRs3MZw5iCXSMinH/ee42VJCsosHpY2AuES9NA=
 
 Now you are Signin into Local GItlab Enjoy it
 
+-----------------------------------------
+GitLab Server with Docker Compose
+
+docker-compose.yml
+version: '3.8'
+
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    container_name: gitlab
+    hostname: gitlab.localhost
+    restart: always
+
+    ports:
+      - "8080:80"
+      - "8443:443"
+      - "2222:22"
+
+   
+
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://localhost:8080'
+        gitlab_rails['gitlab_shell_ssh_port'] = 2222
+
+volumes:
+  gitlab_config:
+  gitlab_logs:
+  gitlab_data:
+
+
+Start GitLab
+docker-compose up -d
+
+Get Root Password
+docker exec -it gitlab cat /etc/gitlab/initial_root_password
+
+URL: http://localhost:8080
+
+Username: root
+
+Password: (from terminal)
+
+
 
 
 
