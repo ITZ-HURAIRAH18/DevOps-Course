@@ -104,5 +104,28 @@ Stop Container with: docker compose down
  -------------------------
  Play with Docker (It is platform where we run Docker iamge with Local setup)
 
+--------------------------------------------
+Docker: Setup & Run GitLab on Docker 
+
+First Download Gitlab image from Google 
+run it through 
+docker run -p 8000:80 gitlab/gitlab-ce:nightly
+
+go to http://localhost:8000/users/sign_in
+
+In Docker Termial run this( docker ps) an get Conatiner id (0bcf18828b1b)
+
+Then run this to grt password:
+docker exec -it 0bcf18828b1b cat /etc/gitlab/initial_root_password
+
+Username:root
+password:acpMuxRs3MZw5iCXSMinH/ee42VJCsosHpY2AuES9NA=
+
+Now you are Signin into Local GItlab Enjoy it
+
+
+
+
+
 
 
