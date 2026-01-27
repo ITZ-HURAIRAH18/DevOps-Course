@@ -99,5 +99,10 @@ volumes:
  
 Run this file with:docker compose up
 Stop Container with: docker compose down
+---------------------------------------------------------
+ How to Upload Image on Docker Hub
+ -------------------------
+ Play with Docker (It is platform where we run Docker iamge with Local setup)
+
 
 
