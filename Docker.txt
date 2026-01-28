@@ -165,6 +165,45 @@ URL: http://localhost:8080
 Username: root
 
 Password: (from terminal)
+--------------------------
+Gitlab server with Volume
+ version: '3.8'
+
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    container_name: gitlab
+    hostname: localhost
+    restart: always
+
+    ports:
+      - "3000:80"     # GitLab Web
+      - "8443:443"    # HTTPS (optional)
+      - "2222:22"     # SSH
+
+    volumes:
+      - gitlab_config:/etc/gitlab
+      - gitlab_logs:/var/log/gitlab
+      - gitlab_data:/var/opt/gitlab
+
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://localhost:3000'
+        gitlab_rails['gitlab_shell_ssh_port'] = 2222
+        gitlab_rails['initial_root_password'] = 'root'
+        gitlab_rails['initial_root_email'] = 'root@local.com'
+
+volumes:
+  gitlab_config:
+  gitlab_logs:
+  gitlab_data:
+
+----------------------------------------------------
+Gitlab Server & Gitlab Runner
+
+GitLab Server:IT is local Gitlab
+GitLab Runner:it is the agent that can do CI/CD
+
 
 
 
