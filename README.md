@@ -798,7 +798,251 @@ git clone git@gitlab.com:username/repo-name.git
 
 ---
 
-### 🔙 Navigation
+### � Create a Docker Image for a Node.js App Using Dockerfile
+
+```dockerfile
+# Use official Node.js runtime as base image
+FROM node:20-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy application files
+COPY . .
+
+# Expose port
+EXPOSE 3000
+
+# Start the application
+CMD ["node", "index.js"]
+```
+
+**Create image:**
+```bash
+docker build -t name .
+```
+
+---
+
+### 🏃 Run Docker Image Inside a Container
+
+---
+
+### 🔄 Create & Manage Multiple Docker Images
+
+**Command Reference:**
+
+```bash
+# Delete all images in Docker
+docker system prune -a
+
+# Create image
+docker build -t name .
+
+# Check all images
+docker images
+
+# Create image after changes in project (with version tag)
+docker build -t name:v2 .
+```
+
+---
+
+### 💾 Volumes Explained! | Why Use Volumes in Docker Containers?
+
+We use volumes with containers to enable live updates. When we change files locally, they automatically appear in the Docker container without rebuilding.
+
+**Setup:**
+
+1. Add `nodemon` to your Node.js project
+2. Run this command in terminal:
+
+```bash
+docker run --name my-container -p 3000:3000 --rm -v "E:/Courses/DevOps/Create a Docker Image/app" app
+```
+
+---
+
+### 📝 Compose.yaml File Explained
+
+This is the file where we define multiple services (like Database and application) and run them with a single command.
+
+**Example docker-compose.yml:**
+
+```yaml
+version: "3.9"
+
+services:
+  app:
+    image: node:18
+    container_name: node_app
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    ports:
+      - "3000:3000"
+    command: npm start
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:6
+    container_name: mongo_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
+```
+
+**Run Docker Compose:**
+```bash
+docker compose up
+```
+
+**Stop Container:**
+```bash
+docker compose down
+```
+
+---
+
+### 📤 How to Upload Image on Docker Hub
+
+---
+
+### 🧪 Play with Docker
+
+It is a platform where we can run Docker images without local setup.
+
+---
+
+### 🦊 Docker: Setup & Run GitLab on Docker
+
+**Method 1: Simple Docker Run**
+
+1. Download GitLab image from Google
+2. Run it through:
+```bash
+docker run -p 8000:80 gitlab/gitlab-ce:nightly
+```
+
+3. Go to: `http://localhost:8000/users/sign_in`
+
+4. In Docker Terminal, run `docker ps` and get Container ID (e.g., `0bcf18828b1b`)
+
+5. Then run this to get password:
+```bash
+docker exec -it 0bcf18828b1b cat /etc/gitlab/initial_root_password
+```
+
+**Login Credentials:**
+- Username: `root`
+- Password: (from the command above)
+
+---
+
+### 🔧 GitLab Server with Docker Compose
+
+**docker-compose.yml:**
+
+```yaml
+version: '3.8'
+
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    container_name: gitlab
+    hostname: gitlab.localhost
+    restart: always
+
+    ports:
+      - "8080:80"
+      - "8443:443"
+      - "2222:22"
+
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://localhost:8080'
+        gitlab_rails['gitlab_shell_ssh_port'] = 2222
+
+volumes:
+  gitlab_config:
+  gitlab_logs:
+  gitlab_data:
+```
+
+**Start GitLab:**
+```bash
+docker-compose up -d
+```
+
+**Get Root Password:**
+```bash
+docker exec -it gitlab cat /etc/gitlab/initial_root_password
+```
+
+**Access:**
+- URL: `http://localhost:8080`
+- Username: `root`
+- Password: (from terminal)
+
+---
+
+### 🗄️ GitLab Server with Volume
+
+```yaml
+version: '3.8'
+
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    container_name: gitlab
+    hostname: localhost
+    restart: always
+
+    ports:
+      - "3000:80"     # GitLab Web
+      - "8443:443"    # HTTPS (optional)
+      - "2222:22"     # SSH
+
+    volumes:
+      - gitlab_config:/etc/gitlab
+      - gitlab_logs:/var/log/gitlab
+      - gitlab_data:/var/opt/gitlab
+
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://localhost:3000'
+        gitlab_rails['gitlab_shell_ssh_port'] = 2222
+        gitlab_rails['initial_root_password'] = 'root'
+        gitlab_rails['initial_root_email'] = 'root@local.com'
+
+volumes:
+  gitlab_config:
+  gitlab_logs:
+  gitlab_data:
+```
+
+---
+
+### 🏃‍♂️ GitLab Server & GitLab Runner
+
+**GitLab Server:** It is a local GitLab instance
+
+**GitLab Runner:** It is the agent that can execute CI/CD pipelines
+
+---
+
+### �🔙 Navigation
 
 [⬆️ Back to Top](#-devops-learning-hub)
 
