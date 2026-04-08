@@ -1,0 +1,98 @@
+Big picture vs. little picture:
+
+As an architect, your focus shifts from deep understanding of a single component to a broader understanding of how many components work together in the whole system.
+The architect acts like a conductor of an orchestra, guiding and coordinating developers (the individual instrument players) to ensure all parts work together smoothly.
+You need to evaluate how changes in one component affect the entire system, considering performance, bugs, and impact on other teams.
+The role requires thinking at a higher level of abstraction and managing the big picture rather than focusing on detailed technical aspects of a single module.
+
+
+Teacher rather than dictator:
+
+As an architect, your role shifts from being the hero who solves all problems to a teacher who guides and empowers developers to make the right decisions.
+Successful architects foster collaboration and shared understanding across teams rather than simply dictating solutions.
+The architect acts as a catalyst, leveraging the skills and experience of the whole team to improve the entire organization.
+
+
+Train and coach: Others
+
+As an architect, your role includes educating and coaching your team on new technologies to ensure they are used effectively and as envisioned.
+You act as a mentor to less experienced engineers, helping them grow and integrate smoothly into the team.
+Architects serve as a bridge between management and development teams, communicating and advocating decisions both ways.
+Participating in performance evaluations is important, as it helps guide team growth and supports raises and promotions.
+
+Review plans and guide decisions: Systems
+
+A software architect spends significant time reviewing development plans to ensure alignment with the overall architectural vision and project goals.
+Architects guide and coach development teams, helping them make decisions that address real problems effectively and maintain system quality.
+The role involves balancing responsibilities to teams, peers, management, and product stakeholders, ensuring all concerns are addressed.
+Architects fulfill multiple roles daily: learner and experimenter, trainer and coach, reviewer, decision-maker, and decision guider, all crucial for project success and team growth.
+
+Agile architecture processes:
+Modern application architecture is dynamic and must continuously evolve to meet changing business and customer needs.
+Agile architecture methods, similar to agile development processes, are essential for building and maintaining flexible, responsive architectures.
+Architects must actively listen to feedback from developers, operations, product management, and customers to adapt the architecture accordingly.
+It's important to have a separate, leading sprint cycle for architecture that informs and guides the development sprint planning.
+
+
+Growing the team and team skills
+As an architect, you are responsible for mentoring and growing the technical skills of your team to meet both current and future application needs.
+You need to assess your team's existing expertise, identify skill gaps, and create plans to up-level their abilities, including training on new technologies like Go, Docker, or machine learning.
+Architects act as a bridge between management and engineers, guiding career growth and ensuring the team is prepared to build and maintain the application effectively as it evolves.
+
+Dev and ops: Both work together
+As an architect, you are responsible for managing both development and operational aspects of the application architecture, ensuring it meets performance and reliability needs.
+Building strong relationships with both development and operations teams is crucial, especially in organizations without a full DevOps culture.
+You play a key role in breaking down silos between development and operations, promoting collaboration and smoother workflows.
+Architects should advocate for and lead the adoption of DevOps principles to improve the overall effectiveness and responsiveness of the organization.
+
+Scale and availability: Beyond just making an app
+As an architect, you're responsible for designing applications that can handle high scale and maintain high availability, especially for SaaS and web-based services.
+Ensuring high availability involves more than just coding; it includes deployment, monitoring, problem resolution, and upgrades.
+Architecting for scale and availability requires specific techniques and decisions that impact both development and operations.
+
+
+The Modern Architect
+Modern software architecture is about far more than drawing diagrams. It requires constant adaptation, strong team leadership, and a deep understanding of how systems behave in the real world. This chapter introduces the essential principles every architect needs to stay effective in fast-changing environments. The following is a quick summary of some of the important principles every architect must be involved in.
+
+Agile Architecture
+Modern software architectures are not static entities.
+
+Modern architectures are fluid, evolving systems, not static blueprints
+Architects must continuously update architecture based on feedback from dev, ops, product, and customers
+Agile principles apply directly to architectural processes
+Use incremental, iterative improvement to adapt to changing requirements
+Architecture review cycles should lead development sprint cycles
+Team Growth and Team Skills Growth
+Software architects help management grow the tech teams and help determine what skills the teams may need now and in the future.
+
+A key responsibility of the architect is growing and leveling-up the engineering team.
+Mentor less-experienced developers and guide their technical growth.
+Assess existing team skills and identify gaps needed for the application’s future.
+Partner with management to ensure the team has the required skills over time.
+Prepare future architects by fostering leadership and architectural thinking.
+DevOps – Dev and Ops Working Together
+Dev and Ops are no longer silos. Even if organizationally your Dev and Ops teams are independent, the software architect must work with both, bridging the gap between the teams to make sure the software being built works on the designed infrastructure, and that it can be supported over time.
+
+Modern architects span development and operations concerns
+Architectural choices must support real-world operational needs (scaling, monitoring, deployment, failure response)
+Even without a DevOps culture, architects are responsible for operational readiness
+Ensure the architecture supports performance under load, resilience, and operational workflows
+Architects should advocate for DevOps principles and cross-functional collaboration
+Scale and Availability
+Scalability and availability are core responsibilities of a modern architect.
+
+Applications must handle high load while maintaining reliability, especially in SaaS environments
+High availability requires thoughtful design: deployment, monitoring, failure handling, and upgrade strategies
+Architects drive systemic approaches to risk management, service tiers, metrics, and connectivity standards
+Successful architectures operate reliably at scale through intentional architectural decisions
+
+People skills
+
+Here are the key takeaways from the video about moving from developer to architect:
+
+As an architect, your focus shifts from coding details to overseeing the entire application and its alignment with business and product needs.
+You act like a conductor, guiding and enabling your team to work together effectively rather than doing the detailed work yourself.
+Building relationships with other architects, management, and your team is crucial to understand broader organizational goals and technical challenges.
+To prepare for this role, take on responsibilities beyond your current tasks, identify and solve wider problems, and proactively contribute solutions rather than just pointing out issues.
+
+
